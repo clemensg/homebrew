@@ -35,11 +35,11 @@ class Subversion < Formula
     # Experimental patch to support UTF-8-MAC filenames
     # http://subversion.tigris.org/issues/show_bug.cgi?id=2464
     if build.include? 'unicode-path'
-      ps << "https://gist.github.com/clemensg/5835253/raw/cd719fa206e92519911ad0ab97fdc3822b252429/svn_status_utf8_fix.diff"
+      ps << "https://gist.github.com/clemensg/5835253/raw/bb17c21390f340d99faee84cd8645c95df2e3e14/patch.diff"
     end
 
     unless ps.empty?
-      { :p0 => ps }
+      { :p1 => ps }
     end
   end
 
