@@ -24,6 +24,10 @@ class Spidermonkey < Formula
     end
 
     mkdir "brew-build" do
+      # Use brewed readline
+      ENV['INCDIRS'] = Readline.new('readline').include
+      ENV['LIBDIRS'] = Readline.new('readline').lib
+
       system "../js/src/configure", "--prefix=#{prefix}",
                                     "--enable-readline",
                                     "--enable-threadsafe",
